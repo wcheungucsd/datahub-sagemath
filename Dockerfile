@@ -26,8 +26,13 @@ RUN add-apt-repository "deb http://archive.ubuntu.com/ubuntu jammy universe"
 RUN apt-get update
 
 
+### Install sagemath
+RUN apt-get -y install sagemath
+
+
+
 # 3) install packages using notebook user
-USER jovyan
+#USER jovyan
 
 # RUN conda install -y scikit-learn
 
@@ -35,7 +40,3 @@ USER jovyan
 
 # Override command to disable running jupyter notebook at launch
 # CMD ["/bin/bash"]
-
-
-### Install sagemath
-RUN apt-get -y install sagemath
