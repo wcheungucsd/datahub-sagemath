@@ -16,10 +16,12 @@ USER root
 
 
 ### Add repository "universe"
+RUN apt-get -y install software-properties-common
 RUN add-apt-repository "deb http://archive.ubuntu.com/ubuntu jammy universe"
 
 ### Clean up and update APT
 RUN apt-get -y clean && apt-get -y update && apt-get -y upgrade
+
 
 
 # 3) install packages using notebook user
