@@ -16,7 +16,7 @@ USER root
 
 
 ### Add repository "universe"
-RUN add-apt-repository universe
+RUN add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
 
 ### Clean up and update APT
 RUN apt-get -y clean && apt-get -y update && apt-get -y upgrade
