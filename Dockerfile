@@ -15,12 +15,14 @@ LABEL maintainer="wcheung@ucsd.edu"
 USER root
 
 
-### Add repository "universe"
-RUN apt-get -y install software-properties-common
-RUN add-apt-repository "deb http://archive.ubuntu.com/ubuntu jammy universe"
 
 ### Clean up and update APT
 RUN apt-get -y clean && apt-get -y update && apt-get -y upgrade
+
+
+### Add repository "universe"
+RUN apt-get -y install software-properties-common
+RUN add-apt-repository "deb http://archive.ubuntu.com/ubuntu jammy universe"
 
 
 
