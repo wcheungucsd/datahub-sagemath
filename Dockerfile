@@ -29,4 +29,5 @@ USER jovyan
 
 
 ### Install sagemath
+RUN add-apt-repository universe
 RUN apt-get -y install sagemath
