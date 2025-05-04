@@ -14,8 +14,13 @@ LABEL maintainer="wcheung@ucsd.edu"
 # 2) change to root to install packages
 USER root
 
+
+### Add repository "universe"
+RUN add-apt-repository universe
+
 ### Clean up and update APT
 RUN apt-get -y clean && apt-get -y update && apt-get -y upgrade
+
 
 # 3) install packages using notebook user
 USER jovyan
@@ -29,5 +34,4 @@ USER jovyan
 
 
 ### Install sagemath
-RUN add-apt-repository universe
 RUN apt-get -y install sagemath
